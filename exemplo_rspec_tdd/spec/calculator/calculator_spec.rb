@@ -16,5 +16,10 @@ describe Calculator do
       result = subject.sum(-5, -7)
       expect(result).to eq(-12)
     end
+
+    xit 'w/ positive' do
+      result = subject.sum(5, 7)
+      expect(result).to eq(12)
+    end
   end
 end
