@@ -1,4 +1,4 @@
-require 'contador'
+require 'counter'
 
 describe 'Matcher change' do
   it {expect{Counter.inc}.to change{Counter.count}}
