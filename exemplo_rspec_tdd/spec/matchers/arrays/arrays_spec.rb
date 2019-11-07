@@ -1,6 +1,6 @@
 RSpec::Matchers.define_negated_matcher :exclude, :include
 
-describe Array.new([1, 5, 7]) do
+describe Array.new([1, 5, 7]), "Array", type: 'collection' do
   it '#include' do
     expect(subject).to include(1) 
     expect(subject).to include(5, 7)     
@@ -8,7 +8,7 @@ describe Array.new([1, 5, 7]) do
 
   it {expect(subject).to exclude(4, 6)}
 
-  it '#contain_exactly' do
+  it '#contain_exactly', :slow do
     expect(subject).to contain_exactly(1, 5, 7)     
   end
 
