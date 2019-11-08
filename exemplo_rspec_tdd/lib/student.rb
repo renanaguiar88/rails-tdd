@@ -11,5 +11,5 @@ class Student
 
   def bar
     #######
-  end
+  end  
 end
