@@ -1,0 +1,7 @@
+ruby_on_rails:
+  name: Ruby on Rails
+  email: ruby@rails.com
+
+test:
+  name: Test One
+  email: test1@test.com
