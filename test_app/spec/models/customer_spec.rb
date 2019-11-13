@@ -12,5 +12,10 @@ RSpec.describe Customer, type: :model do
     expect(customer.full_name).to eq("Mr(s) Ruby on Rails")    
   end
 
+  it 'Inheritance' do
+    customer = create(:customer_default)
+    expect(customer.vip).to be_falsey   
+  end
+
   it {expect{create(:customer)}.to change {Customer.all.size}.by(1)}
 end
