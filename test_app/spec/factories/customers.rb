@@ -3,6 +3,7 @@ FactoryBot.define do
 
     transient do
       upcased {false}
+      orders_count {3}
     end
 
     name {Faker::Name.name}
@@ -28,7 +29,14 @@ FactoryBot.define do
       vip {false}
       days_to_pay {15}
     end
+
+    trait :with_orders do 
+      after(:create) do |customer, evaluator|
+        create_list(:order, evaluator.orders_count, customer: customer)
+      end  
+    end
     
+    factory :customer_with_orders, traits: [:with_orders]
     factory :customer_male, traits: [:male] 
     factory :customer_female, traits: [:female] 
     factory :customer_vip, traits: [:vip]
