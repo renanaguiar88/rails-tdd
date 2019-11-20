@@ -19,7 +19,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Wed, 20 Nov 2019 15:37:03 GMT
+      - Wed, 20 Nov 2019 15:45:44 GMT
       Content-Type:
       - application/json; charset=utf-8
       Transfer-Encoding:
@@ -27,8 +27,8 @@ http_interactions:
       Connection:
       - keep-alive
       Set-Cookie:
-      - __cfduid=d05e01b7483f766afe1159e33db7e4ca31574264223; expires=Fri, 20-Dec-19
-        15:37:03 GMT; path=/; domain=.typicode.com; HttpOnly
+      - __cfduid=d9e2a241444527a66bf6da663b65ca0961574264744; expires=Fri, 20-Dec-19
+        15:45:44 GMT; path=/; domain=.typicode.com; HttpOnly
       X-Powered-By:
       - Express
       Vary:
@@ -50,13 +50,13 @@ http_interactions:
       Cf-Cache-Status:
       - HIT
       Age:
-      - '67'
+      - '588'
       Expect-Ct:
       - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
       Server:
       - cloudflare
       Cf-Ray:
-      - 538b80c3b95d6777-EZE
+      - 538b8d7c3848d819-EZE
     body:
       encoding: ASCII-8BIT
       string: |-
@@ -67,5 +67,5 @@ http_interactions:
           "body": "est rerum tempore vitae\nsequi sint nihil reprehenderit dolor beatae ea dolores neque\nfugiat blanditiis voluptate porro vel nihil molestiae ut reiciendis\nqui aperiam non debitis possimus qui neque nisi nulla"
         }
     http_version: 
-  recorded_at: Wed, 20 Nov 2019 15:37:02 GMT
+  recorded_at: Wed, 20 Nov 2019 15:45:43 GMT
 recorded_with: VCR 5.0.0
