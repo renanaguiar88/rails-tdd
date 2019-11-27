@@ -1,6 +1,10 @@
 require 'rails_helper'
 
 RSpec.describe CustomersController, type: :controller do
+  describe 'Routes' do
+    it {is_expected.to route(:get, '/customers').to(action: :index)}
+  end
+
   describe 'as a Guest' do 
     context '#index' do
       it 'responds successfully' do  
