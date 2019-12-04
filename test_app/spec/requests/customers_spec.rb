@@ -4,7 +4,7 @@ RSpec.describe "Customers", type: :request do
   describe "GET /customers" do
     it "index - status 200" do
       get customers_path
-      expect(response).to have_http_status(200)      
+      expect(response).to have_http_status(:success)      
     end
     
     it "index - JSON" do
@@ -56,6 +56,18 @@ RSpec.describe "Customers", type: :request do
         name: customer.name,
         email: customer.email
       )
+    end
+
+    it "destroy - JSON" do
+      member = create(:member)
+      login_as(member, scope: :member)
+
+      headers = {"ACCEPT" => "application/json"}      
+
+      customer = Customer.first 
+
+      expect{delete "/customers/#{customer.id}.json",  headers: headers}.to change(Customer, :count).by(-1)
+      expect(response).to have_http_status(:no_content)
     end
 
   end
