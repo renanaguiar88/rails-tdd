@@ -24,6 +24,13 @@ RSpec.describe "Customers", type: :request do
         email: (be_kind_of String)
       )
     end
+
+    it "show - pure rspec + JSON" do
+      get '/customers/1.json'      
+      response_body = JSON.parse(response.body)     
+      expect(response_body.fetch("id")).to eq(1)
+      expect(response_body.fetch("name")).to be_kind_of(String)
+    end
     
     it "create - JSON" do
       member = create(:member)
