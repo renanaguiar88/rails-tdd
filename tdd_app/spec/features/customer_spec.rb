@@ -18,4 +18,5 @@ RSpec.feature "Customers", type: :feature do
     click_on('New Customer')
     expect(page).to have_content('New Customer')
   end
+  
 end
