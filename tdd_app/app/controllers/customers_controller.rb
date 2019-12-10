@@ -12,7 +12,7 @@ class CustomersController < ApplicationController
     if @customer.save
       redirect_to customers_path, notice: 'Customer created successfully'
     else
-      render new
+      render :new
     end
   end
 

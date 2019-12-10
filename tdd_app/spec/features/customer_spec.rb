@@ -32,5 +32,11 @@ RSpec.feature "Customers", type: :feature do
     expect(page).to have_content('Customer created successfully')
     expect(Customer.last.name).to eq(customer_name)
   end
+
+  scenario 'Do not register a invalid Customer' do
+    visit(new_customer_path)
+    click_on('Create Customer')
+    expect(page).to have_content(I18n.t('errors.messages.blank'))
+  end
   
 end
