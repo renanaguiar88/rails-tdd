@@ -93,4 +93,29 @@ RSpec.feature "Customers", type: :feature do
     expect(page).to have_content(new_name)
   end
   
+  scenario 'Click on Show Link from Index' do
+    customer = Customer.create!(
+      name: Faker::Name.name,
+      email: Faker::Internet.email,
+      phone: Faker::PhoneNumber.phone_number,
+      smoker: ['Y', 'N'].sample,
+      avatar: "#{Rails.root}/spec/fixtures/avatar.png" 
+    )    
+    visit(customers_path)
+    find(:xpath, '/html/body/table/tbody/tr/td[2]/a').click
+    expect(page).to have_content('Customer Show')
+  end 
+
+  scenario 'Click on Edit Link from Index' do
+    customer = Customer.create!(
+      name: Faker::Name.name,
+      email: Faker::Internet.email,
+      phone: Faker::PhoneNumber.phone_number,
+      smoker: ['Y', 'N'].sample,
+      avatar: "#{Rails.root}/spec/fixtures/avatar.png" 
+    )    
+    visit(customers_path)
+    find(:xpath, '/html/body/table/tbody/tr/td[3]/a').click
+    expect(page).to have_content('Customer Edit')
+  end 
 end
