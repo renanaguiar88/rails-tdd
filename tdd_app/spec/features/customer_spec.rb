@@ -118,4 +118,19 @@ RSpec.feature "Customers", type: :feature do
     find(:xpath, '/html/body/table/tbody/tr/td[3]/a').click
     expect(page).to have_content('Customer Edit')
   end 
+
+  scenario 'Delete a Customer', js: true do
+    customer = Customer.create!(
+      name: Faker::Name.name,
+      email: Faker::Internet.email,
+      phone: Faker::PhoneNumber.phone_number,
+      smoker: ['Y', 'N'].sample,
+      avatar: "#{Rails.root}/spec/fixtures/avatar.png" 
+    ) 
+    visit(customers_path)    
+    find(:xpath, '/html/body/table/tbody/tr/td[4]/a').click
+    1.second
+    page.driver.browser.switch_to.alert.accept
+    expect(page).to have_content('Customer deleted successfully')
+  end
 end

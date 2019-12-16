@@ -43,6 +43,9 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.9'
   gem 'capybara'
   gem 'faker'
+  gem 'selenium-webdriver'
+  gem 'chromedriver-helper' # only headless
+  gem 'webdrivers'
 end
  
 group :development do

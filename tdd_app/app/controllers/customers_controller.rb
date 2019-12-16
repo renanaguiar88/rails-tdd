@@ -1,5 +1,5 @@
 class CustomersController < ApplicationController
-  before_action :set_customer, only: [:show, :edit, :update]
+  before_action :set_customer, only: [:show, :edit, :update, :destroy]
 
   def index
     @customers = Customer.all
@@ -31,6 +31,14 @@ class CustomersController < ApplicationController
       redirect_to customer_path(@customer.id), notice: 'Customer updated successfully'
     else
       render :edit
+    end
+  end
+
+  def destroy
+    if @customer.destroy
+      redirect_to customers_path, notice: 'Customer deleted successfully'
+    else
+      render :index
     end
   end
 
